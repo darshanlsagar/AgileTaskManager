@@ -1,0 +1,87 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.container-drag {
+  text-align: center;
+}
+
+.scheduled {
+  position: absolute;
+  width: 150px;
+  height: 100vh;
+  left:0;
+  top:10;
+  background-color: #eee;
+  border-right: 1px dotted;
+}
+
+.header {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0;
+  width: 100%;
+}
+
+.task-header {
+  display: inline-block;
+  background-color: #aaa;
+  width: 100%;
+}
+
+.droppable {
+  position: absolute;
+  width: 150px;
+  height: 100vh;
+  right:0;
+  top:10;
+  background-color: #9e9;
+  border-right: 1px dotted;
+}
+
+.draggable {
+  width: 130px;
+  background-color: #ddd;
+  margin: 5px auto;
+  line-height: 5em;
+}
+
+.currentTask {
+  left:150px;
+  right: 150px;
+  width: 70%;
+  position: absolute;
+}
+
+.currentTask li {
+  width: 50%;
+  float: left;
+  list-style-type: none;
+  text-align: left;
+}

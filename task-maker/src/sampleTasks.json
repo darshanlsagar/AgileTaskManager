@@ -1,0 +1,35 @@
+[
+	{
+		"complexity":"easy",
+		"status":"wip",
+		"startDate":"24-Jun-2018",
+		"endDate":"24-Jul-2018",
+		"key":"T1",
+		"title":"T1",
+		"subTitle":"ST1",
+		"KeyPoints":"First Task",
+		"category":"scheduled"
+	},
+	{
+		"complexity":"easy",
+		"status":"wip",
+		"startDate":"24-Jun-2018",
+		"endDate":"24-Jul-2018",
+		"key":"T2",
+		"title":"T2",
+		"subTitle":"ST2",
+		"KeyPoints":"Second Task",
+		"category":"scheduled"
+	},
+	{
+		"complexity":"medium",
+		"status":"wip",
+		"startDate":"24-Jun-2018",
+		"endDate":"24-Jul-2018",
+		"key":"T3",
+		"title":"T3",
+		"subTitle":"ST3",
+		"KeyPoints":"Third Task",
+		"category":"scheduled"
+	}
+]
