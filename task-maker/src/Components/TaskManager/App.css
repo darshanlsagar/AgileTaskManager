@@ -72,6 +72,18 @@
   line-height: 5em;
 }
 
+.draggable.easy {
+  background-color: #3bed76;
+}
+
+.draggable.medium {
+  background-color: #ebef4e;
+}
+
+.draggable.difficult {
+  background-color: #f64141;;
+}
+
 .currentTask {
   left:150px;
   right: 150px;

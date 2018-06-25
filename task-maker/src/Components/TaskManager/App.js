@@ -11,20 +11,22 @@ class App extends Component {
 		taskList : taskList
 	}
 	createTaskAction = () => {
+		let key = Math.random()+"";
 		let task = {
 			"complexity":"Easy",
 			"status":"WIP",
 			"startDate":"24-Jun-2018",
 			"endDate":"24-Jul-2018",
-			"key":Math.random(),
+			"key":key.split(".")[1],
 			"title":"Title",
 			"subTitle":"ST1",
 			"KeyPoints":"New Task",
 			"category":"scheduled"
-		}
+		};
+		taskList.push(task);
 		this.setState({
 			...this.state,
-			taskList : taskList.push(task)
+			taskList : [...taskList]
 		})
 	}
 	render() {
