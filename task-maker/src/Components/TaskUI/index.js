@@ -8,6 +8,10 @@ export default class TaskUI extends Component {
     currentTask:this.props.tasks[0]
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ tasksL: nextProps.tasks });  
+  }
+
   showTaskDetails = (e, task) => {
     this.setState({
       currentTask : task       
@@ -18,32 +22,32 @@ export default class TaskUI extends Component {
   	e.preventDefault();
   }
 
-  onDragStart = (ev, id) => {
-  	console.log("dragStart "+id);
-  	ev.dataTransfer.setData("id",id);
+  onDragStart = (ev, key) => {
+  	ev.dataTransfer.setData("key",key);
   }
   onDrop = (ev, cat) => {       
-    let id = ev.dataTransfer.getData("id");
+    let key = ev.dataTransfer.getData("key");
     let tasks = this.state.tasksL.filter((task) => {
-      if (task.title == id) {
+      if (task.key == key) {
         task.category = cat;           
       }
       return task;
-    });        
+    });
     this.setState({
-      tasksL : tasks       
+      tasksL : tasks
     });    
   }
 
   saveTaskDetails = (e, taskObj) => {
-    let tasks = this.state.tasksL.filter((task) => {
-      if (task.title == taskObj.key) {
-        task = taskObj;           
+    let tasks = this.state.tasksL.map((task) => {
+      if (task.key == taskObj.key) {
+        return taskObj;           
       }
       return task;
     });        
     this.setState({
-      tasksL : tasks       
+      tasksL : tasks,
+      currentTask : taskObj
     });  
   }
 
@@ -56,10 +60,10 @@ export default class TaskUI extends Component {
   this.state.tasksL.forEach ((t) => {
     tasks[t.category].push(
       <div key={t.key}                     
-      onDragStart={(e)=>this.onDragStart(e, t.title)}  
+      onDragStart={(e)=>this.onDragStart(e, t.key)}  
       onClick={(e)=>this.showTaskDetails(e, t)}
       draggable                    
-      className="draggable"                    
+      className={"draggable "+t.complexity}                    
       style={{backgroundColor: t.bgcolor}}>                       
       {t.title}                
       </div>);        
